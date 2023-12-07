@@ -341,7 +341,6 @@ Function<String, Integer> f = Integer::parseInt;
 ### Reference
 
 - [자바의 정석](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=76083001&partner=googlek&BSCPN=ORM&BSPRG=ADWORDS&BSCCN1=89221&utm_source=ADWORDS&utm_medium=cpc&utm_term=JAVA%C0%C7%C1%A4%BC%AE&gclid=Cj0KCQiAu62QBhC7ARIsALXijXQ_zzNL5DNVg_7CtLhLBBEmWHEYNeuSDyfs4bo_e_VfuRXWFElnEoIaAgM-EALw_wcB)
-- [모던 자바 인 액션](http://www.yes24.com/Product/Goods/77125987)
 - https://galid1.tistory.com/509
 - https://mangkyu.tistory.com/113
 - https://codechacha.com/ko/java8-functional-interface/
