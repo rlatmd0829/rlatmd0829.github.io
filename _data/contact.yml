@@ -10,6 +10,11 @@
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
+-
+  type: facebook
+  icon: 'fa-solid fa-t'
+  url: 'https://wookcode.tistory.com/'
+
 #- type: rss
 #  icon: "fas fa-rss"
 #  noblank: true

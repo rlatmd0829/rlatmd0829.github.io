@@ -1,6 +1,6 @@
 ---
-title: 포스팅 test 테스트
-date: 2023-12-07 11:16:00 +09:00
+title: Immutable, Synchronized
+date: 2022-05-01 11:16:00 +09:00
 categories: [study, cs_study]
 tags: [java, spring]     # TAG names should always be lowercase
 ---
