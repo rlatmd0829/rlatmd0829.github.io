@@ -5,8 +5,6 @@ categories: [study, cs_study]
 tags: [java, spring]     
 ---
 
-## 스프링 vs 스프링부트
-
 ### 스프링(Spring)
 
 스프링 프레임워크(Spring Framework)는 자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크로서 간단히 스프링이라고도 불린다. 동적인 웹 사이트를 개발하기 위한 여러가지 서비스를 제공하고 있다.

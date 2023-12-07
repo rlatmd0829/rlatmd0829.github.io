@@ -5,7 +5,6 @@ categories: [study, cs_study]
 tags: [java, spring]     
 ---
 
-
 ## HttpMessageConverter
 
 HttpMessageConverter는 기존의 뷰 템플릿으로 HTML을 생성해서 응답하는 것이 아니라 HTTP API(REST API)처럼 JSON형식의 데이터 메시지바디를 직접 읽거나

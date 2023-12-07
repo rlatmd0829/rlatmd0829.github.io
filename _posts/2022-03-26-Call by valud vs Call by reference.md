@@ -5,8 +5,6 @@ categories: [study, cs_study]
 tags: [java, spring]
 ---
 
-## call by value, call by reference
-
 ### Call by value
 
 메소드 호출 시에 사용되는 인자의 메모리에 저장되어 있는 값(value)을 복사하여 보낸다.  

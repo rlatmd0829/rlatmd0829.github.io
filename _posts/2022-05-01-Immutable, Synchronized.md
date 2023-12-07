@@ -4,6 +4,7 @@ date: 2022-05-01 11:16:00 +09:00
 categories: [study, cs_study]
 tags: [java, spring]     # TAG names should always be lowercase
 ---
+
 ## Immutable(불변)
 
 자바의 객체의 타입에는 Immutable(불변) 타입과 mutable(가변) 타입이 있다.

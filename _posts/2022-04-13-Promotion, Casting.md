@@ -5,8 +5,6 @@ categories: [study, cs_study]
 tags: [java, spring]
 ---
 
-## Promotion, Casting
-
 ### type 형 변환
 
 연산을 수행하는 코드에서는 같은 타입끼리만 가능하다. 그래서 연산을 수행하기 전에 같은 타입으로 만들어야 하는데 타입 변환을 하는 것을 형변환 이라고 한다.
