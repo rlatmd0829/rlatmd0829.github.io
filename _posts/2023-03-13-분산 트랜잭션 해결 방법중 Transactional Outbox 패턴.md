@@ -1,6 +1,6 @@
 ---
 title: 분산 트랜잭션 해결 방법중 Transactional Outbox 패턴
-date: 2023-02-03 12:00:00 +09:00
+date: 2023-03-13 12:00:00 +09:00
 categories: [MSA, Transaction]
 tags: [MSA, Transaction]
 ---

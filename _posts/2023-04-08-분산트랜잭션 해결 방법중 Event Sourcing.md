@@ -1,6 +1,6 @@
 ---
 title: 분산 트랜잭션 해결 방법중 Event Sourcing
-date: 2023-03-07 12:00:00 +09:00
+date: 2023-04-08 12:00:00 +09:00
 categories: [MSA, Transaction]
 tags: [MSA, Transaction]     
 ---
@@ -16,7 +16,7 @@ Command에 의해 Processor 가 생성한 Event를 Event Store에 저장한다. 
 <img width="780" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/fd46dd6e-d978-432b-9e89-b7cc433ed132">
 ￼
 
-이벤트 소싱같은 경우에는 데이터를 저장하는데에는 적합하지만, 읽기에는 비효율적입니다. 그래서 CQRS와 같이 사용합니다.
+이벤트 소싱같은 경우에는 데이터를 저장하는데에는 적합하지만, **읽기에는 비효율적입니다**. 그래서 CQRS와 같이 사용합니다.
 
 
 
