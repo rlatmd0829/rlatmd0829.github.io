@@ -5,18 +5,18 @@ categories: [MSA, Transaction]
 tags: [MSA, Transaction]     
 ---
 
-## saga pattern
+## **saga pattern**
 
 saga 패턴에서는 서로 다른 서비스(Application)에서 일련의 트랜젝션을 실행하는데 이 트랜잭션이 하나의 트랜잭션 처럼 보이게 할 수 있습니다. 그래서 만약 이 서비스 중에 하나가 문제가 발생한다면 각각의 서비스에서 다른 보상 트랜잭션을 취해 데이터 정합성을 유지할 수 있습니다.
 
-### Choreography Saga : Event
+### **Choreography Saga : Event**
 
 코레오그레피 패턴 같은 경우 이벤트를 기반으로 합니다. 서비스가 트랜젝션을 실행한 뒤 이벤트를 생성하고, 이 이벤트를 구독하고 있던 다른 서비스가 이벤트를 수신한다. 따라서 적절한 성공 및 실패 이벤트를 설계할 필요가 있고, 이벤트 producer, consumer 또한 실패시 **보상 트렌젝션**을 설계해야 합니다.
 
 ![image](https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/356ee235-64c1-4d30-9296-8e1875ef4054)
 
 
-### Orchestration Saga : Command
+### **Orchestration Saga : Command**
 
 모든 통신을 담당하는 중앙 오케스트레이터가 올바른 순서로 서비스를 제공하고 문제가 발생하면 서비스마다 **보상 트랜잭션**을 취합니다.
 
@@ -25,14 +25,14 @@ saga 패턴에서는 서로 다른 서비스(Application)에서 일련의 트랜
 ![image](https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/0b6ef188-bb4d-46c3-b9b7-61fb392cd798)
 
 
-### Choreography Saga vs Orchestration Saga
+### **Choreography Saga vs Orchestration Saga**
 
 코레오그레피 사가 패턴 같은 경우 아직 구현되지 않는 마이크로 서비스 애플리케이션을 개발할 때 사용하는 것이 적합합니다. 왜냐하면 한 서비스가 다른 서비스에서 발생시킨 이벤트를 구독하여 동작하기 때문입니다. 또한 서비스가 이벤트를 구독하고 있어 자칫 설계가 복잡해질 수 있기 때문에 서비스 대상이 적을때 적합합니다.
 
 
 오케스트레이션 사가 같은 경우 아미 구현된 마이크로 서비스가 있고 그 MSA 에 사가 패턴을 적용하고 싶을 때 사용하는 것이 적합합니다.
 
-### Saga 패턴 정리
+### **Saga 패턴 정리**
 
 사가 패턴은 ACID 중 원자성, 일관성, 지속성(ACD) 에 대해 지원해줍니다. 사가 패턴에는 보상 트랜젝션이 존재하기 때문에 데이터의 원자성을 보장할 수 있고, 일관성을 보장할 수 있습니다. 또한 데이터 베이스에 수행한 트랜젝션이 반영이 되고 보존되기 때문에 지속성도 보장합니다.
 
@@ -42,13 +42,13 @@ saga 패턴에서는 서로 다른 서비스(Application)에서 일련의 트랜
 그렇다면 트랜젝션 자체를 저장하는 것은 어떨까? 그 개념이 **Event Sourcing** 입니다.
 
 
-### FallBack
+### **FallBack**
 
 Feign 요청했을때 응답이 에러가 오면 fallback 이 발생한다
 
 fallback method는 실패에 대해서 후처리를 위해 설정해 두는 method입니다. 해당 메서드는 Circuit Open, Thread pool의 Queue, Semaphore의 상태, 실제 명령어의 수행 여부 등에 따라서 호출 될 수 있습니다. 
 
-### Circuit Breaker Pattern
+### **Circuit Breaker Pattern**
 
 MSA로 되어 있다면 다른 서비스를 호출하는 경우가 매우 빈번하다. 문제는 서버들에 장애가 발생할 수 있다는 점인데, 호출한 다른 서비스에 장애가 발생했다면 장애가 전파되어 문제가 생깁니다.
 
@@ -58,7 +58,7 @@ MSA로 되어 있다면 다른 서비스를 호출하는 경우가 매우 빈번
 ---------
 
 
-### Reference
+### **Reference**
 
 - https://joobly.tistory.com/69
 

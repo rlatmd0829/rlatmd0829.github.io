@@ -5,11 +5,11 @@ categories: [MSA, Transaction]
 tags: [MSA, Transaction]
 ---
 
-## Transactional Outbox 패턴
+## **Transactional Outbox 패턴**
 
 이 패턴은 데이터베이스의 트랜잭션 내에서 발생하는 이벤트를 캡처하고 이벤트를 외부 메시지 큐 또는 저장소에 안전하게 기록하는 방법을 다룹니다. 주로 데이터베이스 트랜잭션 외에도 외부 시스템에 변경 사항을 전파해야 할 때 사용됩니다.
 
-### 내용
+### **내용**
 
 주문 데이터베이스에 새로운 주문을 추가하고, 이벤트를 발행하기 직전에 서비스가 끊기게 된다면 어떻게 될까요? 보통 클라우드에서 대규모 시스템을 운영하는 경우 이런 문제는 충분히 일어날 수 있습니다.
 
@@ -28,17 +28,17 @@ tags: [MSA, Transaction]
 이 방식을 **Transactional Outbox** 패턴이라고 합니다
 
 
-### 기존 Choreography  saga 패턴 적용한 그림
+### **기존 Choreography  saga 패턴 적용한 그림**
 
 <img width="706" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/2b12f37e-fffa-4a38-b0e0-9d1b5355e4af">
 
 
-### 위에 saga 패턴에 Transactional Outbox 패턴 적용한 그림
+### **위에 saga 패턴에 Transactional Outbox 패턴 적용한 그림**
 
 <img width="728" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/04d50c20-d568-4470-b7e0-4f1329a2ff35">
 
 
-### 보통 saga패턴 또는 event sourcing 패턴과 같이 사용하는 경우가 많습니다.
+### **보통 saga패턴 또는 event sourcing 패턴과 같이 사용하는 경우가 많습니다.**
 
 - Saga 패턴은 여러 서비스 간의 긴 트랜잭션을 관리하고, 각 단계에서의 트랜잭션 문제를 처리하여 시스템을 일관된 상태로 유지하는 데 중점을 둡니다. 이 과정에서 트랜잭션의 각 단계에서 이벤트를 발생시키는 경우, Transactional Outbox 패턴을 사용하여 이벤트를 안전하게 기록하고 외부 시스템으로 전달할 수 있습니다.
 
@@ -54,7 +54,7 @@ tags: [MSA, Transaction]
 
 
 
-### Reference
+### **Reference**
 
 - https://devocean.sk.com/blog/techBoardDetail.do?ID=165445
 - https://blog.gangnamunni.com/post/transactional-outbox
