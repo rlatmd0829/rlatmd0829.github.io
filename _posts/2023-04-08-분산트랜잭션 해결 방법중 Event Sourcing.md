@@ -38,7 +38,7 @@ Event Sourcing에서 Event는 상태가 변경되는 경우만 기록하면 됩�
 
 그래서 CQRS를 적용하여 읽기와 쓰기 db를 나눠 쓰기에서는 이벤트를 발행하고 읽기 db에서는 빠르게 조회를 수행할수 있도록 진행합니다.
 
-따라서 이벤트 소싱의 단점인 READ에 적합하지 않다는 문제를 해결할 수 있습니다.
+따라서 **이벤트 소싱의 단점인 READ에 적합하지 않다는 문제**를 해결할 수 있습니다.
 
 
 
@@ -46,7 +46,7 @@ Event Sourcing에서 Event는 상태가 변경되는 경우만 기록하면 됩�
 
 CQRS는 읽기 DB와 쓰기 DB가 분리되어 사용해 데이터 불일치가 발생할 수 있습니다. 이벤트 소싱은 이 단점을 보완해줍니다.
 
-Command로 변경된 Aggregate를 Event Store에 저장하여, Event Handler로 Read db의 데이터 일관성을 보장해주는 것입니다.
+Command로 변경된 Aggregate를 Event Store에 저장하여, Event Handler로 **Read db의 데이터 일관성을 보장**해주는 것입니다.
 
 Read db를 따로 두어 이벤트발생시 저장해주고 query에서 접근할때는 읽기 db로 접근하여 읽어올수 있도록 하면됩니다.
 
