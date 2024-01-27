@@ -5,7 +5,7 @@ categories: [MSA, Transaction]
 tags: [MSA, Transaction]     
 ---
 
-# Event Sourcing
+## Event Sourcing
 
 Event Sourcing은 순차적으로 발생하는 이벤트를 모두 저장하는 패턴입니다.
 

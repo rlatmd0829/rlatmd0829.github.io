@@ -5,7 +5,7 @@ categories: [MSA, Transaction]
 tags: [MSA, Transaction]     
 ---
 
-# saga pattern
+## saga pattern
 
 saga 패턴에서는 서로 다른 서비스(Application)에서 일련의 트랜젝션을 실행하는데 이 트랜잭션이 하나의 트랜잭션 처럼 보이게 할 수 있습니다. 그래서 만약 이 서비스 중에 하나가 문제가 발생한다면 각각의 서비스에서 다른 보상 트랜잭션을 취해 데이터 정합성을 유지할 수 있습니다.
 
