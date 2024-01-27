@@ -5,7 +5,7 @@ categories: [MSA, Transaction]
 tags: [MSA, Transaction]     
 ---
 
-# 분산 트랜잭션 해결 방법중 Event Sourcing
+# Event Sourcing
 
 Event Sourcing은 순차적으로 발생하는 이벤트를 모두 저장하는 패턴입니다.
 
@@ -51,12 +51,12 @@ Command로 변경된 Aggregate를 Event Store에 저장하여, Event Handler로 
 Read db를 따로 두어 이벤트발생시 저장해주고 query에서 접근할때는 읽기 db로 접근하여 읽어올수 있도록 하면됩니다.
 
 
+### 다른방법
+
+그러나 Event Sourcing이 분산 시스템에서 모든 분산 트랜잭션을 해결하는 완벽한 솔루션은 아닙니다. 특히 복잡한 트랜잭션 처리나 일부 동기화된 작업의 관리 등에 있어 추가적인 고려가 필요할 수 있습니다.
 
 
-> 그러나 Event Sourcing이 분산 시스템에서 모든 분산 트랜잭션을 해결하는 완벽한 솔루션은 아닙니다. 특히 복잡한 트랜잭션 처리나 일부 동기화된 작업의 관리 등에 있어 추가적인 고려가 필요할 수 있습니다.
->
->
-> Saga 패턴과 Event Sourcing은 각각 분산된 트랜잭션 관리와 상태 관리를 위해 다른 방식으로 접근하지만, 이전 상태로 롤백하거나 보상하는 개념은 Saga 패턴에서 주로 사용되며, Event Sourcing은 상태 변경 이력을 기록하고 성공적인 상태를 반영하면서 실패한 상태를 보상적으로 해결합니다.
+Saga 패턴과 Event Sourcing은 각각 분산된 트랜잭션 관리와 상태 관리를 위해 다른 방식으로 접근하지만, 이전 상태로 롤백하거나 보상하는 개념은 Saga 패턴에서 주로 사용되며, Event Sourcing은 상태 변경 이력을 기록하고 성공적인 상태를 반영하면서 실패한 상태를 보상적으로 해결합니다.
 
 
 
