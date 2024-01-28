@@ -15,9 +15,9 @@ tags: [MSA, Transaction]
 
 새로운 주문은 주문 데이터베이스에 있지만, 연계된 다른 서비스들은 이벤트를 전달 받지 못하는 상황이 됩니다.
 
-이런 문제를 해결하기 위한 방법은, **데이터베이스를 업데이트하는 트랜잭션 안에 발행해야할 메시지를 데이터베이스에 저장**하고, 별도의 프로세스가 데이터베이스에 저장된 이벤트를 읽어서 메시지 브로커에 전송하는 것입니다.
+이런 문제를 해결하기 위한 방법은, 데이터베이스를 업데이트하는 트랜잭션 안에 발행해야할 메시지를 데이터베이스에 저장하고, 별도의 프로세스가 데이터베이스에 저장된 이벤트를 읽어서 메시지 브로커에 전송하는 것입니다.
 
-- 메시지를 발행하는 시스템은 **데이터베이스 트랜잭션과 함께 이벤트를 '아웃박스' 테이블에 저장하고**, 이를 별도의 프로세스가 메시지 브로커로 전송합니다. 
+- 메시지를 발행하는 시스템은 데이터베이스 트랜잭션과 함께 이벤트를 <font color='dodgerblue'>아웃박스 테이블</font>에 저장하고, 이를 별도의 프로세스가 메시지 브로커로 전송합니다. 
 
 
 - 트랜잭션이 제공하는 원자성을 이용해, 발행하지 않아야 하는 메시지가 대기열 테이블에 들어가거나, 발행해야 하는 메시지가 대기열 테이블에 들어가지 않는 문제를 방지합니다.
@@ -25,7 +25,7 @@ tags: [MSA, Transaction]
 
 - 이후 저장된 메시지를 성공할 때까지 발행합니다(At-Least Once Delivery). 메시지를 수신하는 시스템은 같은 메시지를 여러 번 수신해도. 한 번 수신한 것과 같이 처리해, 메시지가 정확히 한 번 처리되도록(Exactly-Once Processing) 합니다.
 
-이 방식을 **Transactional Outbox** 패턴이라고 합니다
+이 방식을 <font color='dodgerblue'>Transactional Outbox</font> 패턴이라고 합니다
 
 
 ### **기존 Choreography  saga 패턴 적용한 그림**
@@ -54,7 +54,7 @@ tags: [MSA, Transaction]
 
 
 
-### **Reference**
+## **Reference**
 
 - <https://devocean.sk.com/blog/techBoardDetail.do?ID=165445>{: target="_blank"}
 - <https://blog.gangnamunni.com/post/transactional-outbox>{: target="_blank"}
