@@ -16,7 +16,6 @@ Command에 의해 Processor 가 생성한 Event를 Event Store에 저장한다. 
 이벤트 소싱에서는 데이터를 삭제(delete) 하거나 수정(update) 하지 않고 삽입(insert) 에 대한 작업만 수행합니다.
 
 <img width="780" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/fd46dd6e-d978-432b-9e89-b7cc433ed132">
-￼
 
 이벤트 소싱같은 경우에는 데이터를 저장하는데에는 적합하지만, <font color='dodgerblue'>읽기에는 비효율적입니다</font>. 그래서 CQRS와 같이 사용합니다.
 
@@ -27,7 +26,6 @@ Command에 의해 Processor 가 생성한 Event를 Event Store에 저장한다. 
 시스템의 상태를 변경하는 Command 와 시스템을 조회만 하는 Query를 분리하는 마이크로 서비스 패턴을 말합니다.
 
 <img width="832" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/ee27ed76-eb81-4b8b-9635-f75b301f3a7c">
-
 
 Event Sourcing과 CQRS 가 서로의 단점을 보완해주기 때문에 같이 사용하는 경우가 많습니다.
 

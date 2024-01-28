@@ -5,7 +5,7 @@ categories: [MSA, Transaction]
 tags: [MSA, Transaction]     
 ---
 
-## **saga pattern**
+## **Saga pattern**
 
 <hr style="height: 2px; border: none; background-color: white;" />
 
