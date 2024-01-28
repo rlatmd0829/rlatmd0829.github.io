@@ -28,7 +28,7 @@ Command에 의해 Processor 가 생성한 Event를 Event Store에 저장한다. 
 <img width="832" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/ee27ed76-eb81-4b8b-9635-f75b301f3a7c">
 
 
-Event Sourcing과 CQRS 가 서로의 단점을 보완해주기 때문에 같이 사용하는 경우가 많습니다. :blush:
+Event Sourcing과 CQRS 가 서로의 단점을 보완해주기 때문에 같이 사용하는 경우가 많습니다.
 
 
 
