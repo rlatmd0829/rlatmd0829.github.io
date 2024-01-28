@@ -6,6 +6,7 @@ tags: [MSA, Transaction]
 ---
 
 ## **Event Sourcing**
+=====================
 
 Event Sourcing은 순차적으로 발생하는 이벤트를 모두 저장하는 패턴입니다.
 
@@ -21,6 +22,7 @@ Command에 의해 Processor 가 생성한 Event를 Event Store에 저장한다. 
 
 
 ### **CQRS**
+------------
 
 시스템의 상태를 변경하는 Command 와 시스템을 조회만 하는 Query를 분리하는 마이크로 서비스 패턴을 말합니다.
 
@@ -53,10 +55,10 @@ Read db를 따로 두어 이벤트발생시 저장해주고 query에서 접근�
 
 ### **다른방법**
 
-그러나 Event Sourcing이 분산 시스템에서 모든 분산 트랜잭션을 해결하는 완벽한 솔루션은 아닙니다. 특히 복잡한 트랜잭션 처리나 일부 동기화된 작업의 관리 등에 있어 추가적인 고려가 필요할 수 있습니다.
+그러나 **Event Sourcing** 이 분산 시스템에서 모든 분산 트랜잭션을 해결하는 완벽한 솔루션은 아닙니다. 특히 복잡한 트랜잭션 처리나 일부 동기화된 작업의 관리 등에 있어 추가적인 고려가 필요할 수 있습니다.
 
 
-Saga 패턴과 Event Sourcing은 각각 분산된 트랜잭션 관리와 상태 관리를 위해 다른 방식으로 접근하지만, 이전 상태로 롤백하거나 보상하는 개념은 Saga 패턴에서 주로 사용되며, Event Sourcing은 상태 변경 이력을 기록하고 성공적인 상태를 반영하면서 실패한 상태를 보상적으로 해결합니다.
+`Saga 패턴`과 *Event Sourcing* 은 각각 분산된 트랜잭션 관리와 상태 관리를 위해 다른 방식으로 접근하지만, 이전 상태로 롤백하거나 보상하는 개념은 Saga 패턴에서 주로 사용되며, Event Sourcing은 상태 변경 이력을 기록하고 성공적인 상태를 반영하면서 실패한 상태를 보상적으로 해결합니다.
 
 
 
@@ -66,5 +68,5 @@ Saga 패턴과 Event Sourcing은 각각 분산된 트랜잭션 관리와 상태 
 
 ### **Reference**
 
-- <https://velog.io/@borab/%EB%B6%84%EC%82%B0-%ED%99%98%EA%B2%BD%EA%B3%BC-Event-Driven-Architecture>
-- <https://doqtqu.tistory.com/337>
+- <https://velog.io/@borab/%EB%B6%84%EC%82%B0-%ED%99%98%EA%B2%BD%EA%B3%BC-Event-Driven-Architecture>{: target="_blank"}
+- <https://doqtqu.tistory.com/337>{: target="_blank"}

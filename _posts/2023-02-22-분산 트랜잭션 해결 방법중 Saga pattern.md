@@ -60,5 +60,5 @@ MSA로 되어 있다면 다른 서비스를 호출하는 경우가 매우 빈번
 
 ### **Reference**
 
-- <https://joobly.tistory.com/69>
+- <https://joobly.tistory.com/69>{: target="_blank"}
 
