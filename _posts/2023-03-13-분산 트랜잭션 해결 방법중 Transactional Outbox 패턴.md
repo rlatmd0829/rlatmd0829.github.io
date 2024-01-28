@@ -56,5 +56,5 @@ tags: [MSA, Transaction]
 
 ### **Reference**
 
-- https://devocean.sk.com/blog/techBoardDetail.do?ID=165445
-- https://blog.gangnamunni.com/post/transactional-outbox
+- <https://devocean.sk.com/blog/techBoardDetail.do?ID=165445>
+- <https://blog.gangnamunni.com/post/transactional-outbox>
