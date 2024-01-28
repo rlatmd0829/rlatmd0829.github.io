@@ -5,8 +5,8 @@ categories: [MSA, Transaction]
 tags: [MSA, Transaction]     
 ---
 
-## **Event Sourcing**
-=====================
+Event Sourcing
+==============
 
 Event Sourcing은 순차적으로 발생하는 이벤트를 모두 저장하는 패턴입니다.
 
@@ -21,15 +21,15 @@ Command에 의해 Processor 가 생성한 Event를 Event Store에 저장한다. 
 
 
 
-### **CQRS**
-------------
+CQRS
+----
 
 시스템의 상태를 변경하는 Command 와 시스템을 조회만 하는 Query를 분리하는 마이크로 서비스 패턴을 말합니다.
 
 <img width="832" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/ee27ed76-eb81-4b8b-9635-f75b301f3a7c">
 
 
-Event Sourcing과 CQRS 가 서로의 단점을 보완해주기 때문에 같이 사용하는 경우가 많습니다.
+Event Sourcing과 CQRS 가 서로의 단점을 보완해주기 때문에 같이 사용하는 경우가 많습니다. :blush:
 
 
 
@@ -58,7 +58,7 @@ Read db를 따로 두어 이벤트발생시 저장해주고 query에서 접근�
 그러나 **Event Sourcing** 이 분산 시스템에서 모든 분산 트랜잭션을 해결하는 완벽한 솔루션은 아닙니다. 특히 복잡한 트랜잭션 처리나 일부 동기화된 작업의 관리 등에 있어 추가적인 고려가 필요할 수 있습니다.
 
 
-`Saga 패턴`과 *Event Sourcing* 은 각각 분산된 트랜잭션 관리와 상태 관리를 위해 다른 방식으로 접근하지만, 이전 상태로 롤백하거나 보상하는 개념은 Saga 패턴에서 주로 사용되며, Event Sourcing은 상태 변경 이력을 기록하고 성공적인 상태를 반영하면서 실패한 상태를 보상적으로 해결합니다.
+`Saga 패턴`과 <font color='dodgerblue'>Event Sourcing</font> 은 각각 분산된 트랜잭션 관리와 상태 관리를 위해 다른 방식으로 접근하지만, 이전 상태로 롤백하거나 보상하는 개념은 Saga 패턴에서 주로 사용되며, Event Sourcing은 상태 변경 이력을 기록하고 성공적인 상태를 반영하면서 실패한 상태를 보상적으로 해결합니다.
 
 
 
