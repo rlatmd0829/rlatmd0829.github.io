@@ -56,7 +56,7 @@ MSA로 되어 있다면 다른 서비스를 호출하는 경우가 매우 빈번
 
 장애가 발생한 서비스를 탐지하고, 요청을 보내지 않도록 차단할 필요가 생기게되어 Circuit Breaker Pattern이 나오게 되었습니다.
 
-
+<br>
 <hr style="height: 2px; border: none; background-color: white;" />
 
 

@@ -61,7 +61,7 @@ Read db를 따로 두어 이벤트발생시 저장해주고 query에서 접근�
 Saga 패턴과 Event Sourcing 은 각각 분산된 트랜잭션 관리와 상태 관리를 위해 다른 방식으로 접근하지만, 이전 상태로 롤백하거나 보상하는 개념은 Saga 패턴에서 주로 사용되며, Event Sourcing은 상태 변경 이력을 기록하고 성공적인 상태를 반영하면서 실패한 상태를 보상적으로 해결합니다.
 
 
-
+<br>
 <hr style="height: 2px; border: none; background-color: white;" />
 
 
