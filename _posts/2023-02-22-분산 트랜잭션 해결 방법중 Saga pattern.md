@@ -42,13 +42,13 @@ saga 패턴에서는 서로 다른 서비스(Application)에서 일련의 트랜
 그렇다면 트랜젝션 자체를 저장하는 것은 어떨까? 그 개념이 **Event Sourcing** 입니다.
 
 
-### **FallBack**
+## **FallBack**
 
 Feign 요청했을때 응답이 에러가 오면 fallback 이 발생한다
 
 fallback method는 실패에 대해서 후처리를 위해 설정해 두는 method입니다. 해당 메서드는 Circuit Open, Thread pool의 Queue, Semaphore의 상태, 실제 명령어의 수행 여부 등에 따라서 호출 될 수 있습니다. 
 
-### **Circuit Breaker Pattern**
+## **Circuit Breaker Pattern**
 
 MSA로 되어 있다면 다른 서비스를 호출하는 경우가 매우 빈번하다. 문제는 서버들에 장애가 발생할 수 있다는 점인데, 호출한 다른 서비스에 장애가 발생했다면 장애가 전파되어 문제가 생깁니다.
 
@@ -58,7 +58,7 @@ MSA로 되어 있다면 다른 서비스를 호출하는 경우가 매우 빈번
 ---------
 
 
-### **Reference**
+## **Reference**
 
 - <https://joobly.tistory.com/69>{: target="_blank"}
 
