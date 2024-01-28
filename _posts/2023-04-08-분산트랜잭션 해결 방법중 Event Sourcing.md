@@ -5,7 +5,7 @@ categories: [MSA, Transaction]
 tags: [MSA, Transaction]     
 ---
 
-## **Event Sourcing**
+## <font color='dodgerblue'>**Event Sourcing**</font>
 
 Event Sourcing은 순차적으로 발생하는 이벤트를 모두 저장하는 패턴입니다.
 
@@ -20,8 +20,7 @@ Command에 의해 Processor 가 생성한 Event를 Event Store에 저장한다. 
 
 
 
-<font color='dodgerblue'>CQRS</font>
-------------------------------------
+## <font color='dodgerblue'>CQRS</font>
 
 시스템의 상태를 변경하는 Command 와 시스템을 조회만 하는 Query를 분리하는 마이크로 서비스 패턴을 말합니다.
 
