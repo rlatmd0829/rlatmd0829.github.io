@@ -7,6 +7,8 @@ tags: [MSA, Transaction]
 
 ## **Transactional Outbox 패턴**
 
+<hr style="height: 2px; border: none; background-color: white;" />
+
 이 패턴은 데이터베이스의 트랜잭션 내에서 발생하는 이벤트를 캡처하고 이벤트를 외부 메시지 큐 또는 저장소에 안전하게 기록하는 방법을 다룹니다. 주로 데이터베이스 트랜잭션 외에도 외부 시스템에 변경 사항을 전파해야 할 때 사용됩니다.
 
 ### **내용**
@@ -50,7 +52,7 @@ tags: [MSA, Transaction]
 
 
 
------------
+<hr style="height: 2px; border: none; background-color: white;" />
 
 
 
