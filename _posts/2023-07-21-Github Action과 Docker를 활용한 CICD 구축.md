@@ -21,7 +21,7 @@ pem 키는 EC2 인스턴스에 접속하기 위한 비밀 키입니다. 이 비�
 
 EC2 인스턴스에는 `.ssh/authorized_keys` 파일에 공개 키가 저장되어 있습니다. 따라서 SSH 연결 시에는 키 쌍을 이용하여 공개 키와 비밀 키를 서로 비교하여 인증을 수행합니다.
 
-> <font color='dodgerblue'>새로운 키 쌍을 생성하려면 ssh-keygen 명령어를 사용하여 공개 키와 비밀 키를 생성합니다. 그 후에 생성된 공개 키를 EC2 인스턴스의 .ssh/authorized_keys 파일에 저장하면 해당 비밀 키로도 EC2 인스턴스에 연결할 수 있습니다.</font>
+> **<font color='dodgerblue'>새로운 키 쌍을 생성하려면 ssh-keygen 명령어를 사용하여 공개 키와 비밀 키를 생성합니다. 그 후에 생성된 공개 키를 EC2 인스턴스의 .ssh/authorized_keys 파일에 저장하면 해당 비밀 키로도 EC2 인스턴스에 연결할 수 있습니다.</font>**
 
 <br>
 
@@ -141,7 +141,7 @@ jobs:
         run: ./gradlew test
 ```
 
-> DB_HOST, DB_USERNAME, DB_PASSWORD 등 직접 값을 넣어주기 보다는 GitHub Secrets에 환경변수를 넣어주고 ${{ secrets.QUACK_RUN_SSH_HOST }} 이런식으로 사용하는게 좋습니다. 
+> **<font color='dodgerblue'>DB_HOST, DB_USERNAME, DB_PASSWORD 등 직접 값을 넣어주기 보다는 GitHub Secrets에 환경변수를 넣어주고 ${{ secrets.QUACK_RUN_SSH_HOST }} 이런식으로 사용하는게 좋습니다.</font>**
 
 <br>
 
