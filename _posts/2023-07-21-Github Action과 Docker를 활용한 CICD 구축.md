@@ -96,32 +96,25 @@ jobs:
       - name: Deliver file
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.QUACK_RUN_SSH_HOST }}
-          username: ${{ secrets.QUACK_RUN_SSH_USERNAME }}
-          key: ${{ secrets.QUACK_RUN_SSH_KEY }}
-          port: ${{ secrets.QUACK_RUN_SSH_PORT }}
+          host: 호스팅 서버의 SSH 호스트 주소
+          username: 호스팅 서버의 SSH 이름
+          key: SSH 연결에 사용되는 키
+          port: 호스팅 서버의 포트 번호
           source: "build/libs/*.jar"
           target: "source"
           rm: true
       - name: Deploy new version of server
         uses: appleboy/ssh-action@master
         with:
-          host: $\{{ secrets.QUACK_RUN_SSH_HOST }}\
-          username: \${{ secrets.QUACK_RUN_SSH_USERNAME }}\
-          key: ${{ secrets.QUACK_RUN_SSH_KEY }}
-          port: ${{ secrets.QUACK_RUN_SSH_PORT }}
+          host: 호스팅 서버의 SSH 호스트 주소
+          username: 호스팅 서버의 SSH 이름
+          key: SSH 연결에 사용되는 키
+          port: 호스팅 서버의 포트 번호
           script: |
-            export DB_HOST=${{ secrets.DB_HOST }}
-            export DB_USERNAME=${{ secrets.DB_USERNAME }}
-            export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-            export BOT_USER_OAUTH_TOKEN=${{ secrets.BOT_USER_OAUTH_TOKEN }}
-            export ACTIVE_PROFILE=${{ secrets.ACTIVE_PROFILE }}
-            export MAIL_SENDER=${{ secrets.MAIL_SENDER }}
-            export MAIL_APP_PASSWORD=${{ secrets.MAIL_APP_PASSWORD }}
-            
-            echo "DB_HOST: $DB_HOST"
-            echo "DB_USERNAME: $DB_USERNAME"
-            echo "DB_PASSWORD: $DB_PASSWORD"
+            export DB_HOST= 호스팅 서버의 SSH 호스트 주소
+            export DB_USERNAME= 호스팅 서버의 SSH 이름
+            export DB_PASSWORD= 호스팅 서버의 SSH 비밀번호
+            export ACTIVE_PROFILE= active 프로필
             
             docker stop status-page-api || true
             docker rm status-page-api || true
@@ -129,7 +122,7 @@ jobs:
             
             docker build -t status-page-image .
 
-            docker run -d -p 8080:8080 --name status-page-api -e DB_HOST=$DB_HOST -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD -e BOT_USER_OAUTH_TOKEN=$BOT_USER_OAUTH_TOKEN -e SPRING_PROFILES_ACTIVE=$ACTIVE_PROFILE -e MAIL_SENDER=$MAIL_SENDER -e MAIL_APP_PASSWORD=$MAIL_APP_PASSWORD status-page-image:latest
+            docker run -d -p 8080:8080 --name status-page-api -e DB_HOST=$DB_HOST -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD -e SPRING_PROFILES_ACTIVE=$ACTIVE_PROFILE status-page-image:latest
 
   test:
     if: github.event_name == 'pull_request'
