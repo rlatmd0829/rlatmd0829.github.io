@@ -13,13 +13,13 @@ JMeter는 Apache 소프트웨어 재단에서 개발한 오픈 소스의 Java �
 
 brew 명령어를 이용해 jmeter를 간단하게 설치 할 수 있습니다.
 
-```java
+```shell
 brew install jmeter
 ```
 
 설치가 완료되었으면 해당 명령어를 이용해 Jmeter를 실행해줍니다.
 
-```java
+```shell
 open /opt/homebrew/opt/jmeter/bin/jmeter
 ```
 
@@ -64,8 +64,15 @@ Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만�
 
 <img width="606" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/e2a896aa-a382-4cd3-9edf-86c03b2bbf4b">
 
+### csv를 활용하여 변수에 넣어 사용하는법
 
-### 이전요청 응답값으로 요청하는법
+값을 넣어야할게 많을 경우에는 CSV Data Set Config 를 활용해서 csv를 넣어서 값을 가져올 수 있습니다.
+
+<img width="1016" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/954a959c-cd72-41a0-816a-94266392ceb6">
+
+열별로 네이밍을 나눌때에는 `,` 를 사용하여 구분하면 됩니다.
+
+### 이전요청 응답값을 변수에 넣어 사용하는법
 
 응답값이 아래와 같이 들어올 때 JSON Extractor를 사용하여 `data.token` 을 가져와 변수에 넣을 수 있습니다.
 
@@ -80,15 +87,10 @@ Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만�
 <img width="1011" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/ad3b878b-c2cf-4507-981d-21323318b3b2">
 
 
-그리고 값을 넣어야할게 많을 경우에는 CSV Data Set Config 를 활용해서 csv를 넣어서 값을 가져올 수 있습니다.
-
-<img width="1016" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/954a959c-cd72-41a0-816a-94266392ceb6">
-
-열별로 네이밍을 나눌때에는 `,` 를 사용하여 구분하면 됩니다.
-
 이전 요청 응답값으로 나온 data.token 값을 token으로 넣을 수 있고 csv에서 가져온 값도 다음 요청에서 활용할 수 있습니다.
 
 <img width="1009" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/bb8fd631-e71d-4031-965a-998c60d5803e">
+
 
 ### 그 외 테스트에 도움이 될만한 내용
 
