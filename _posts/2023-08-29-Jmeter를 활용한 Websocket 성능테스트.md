@@ -29,6 +29,16 @@ open /opt/homebrew/opt/jmeter/bin/jmeter
 
 <br>
 
+## Header에 Authorization Token 추가
+
+<hr style="height: 2px; border: none; background-color: white;" />
+
+Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만들어서 토큰을 넣어줍니다.
+
+<img width="606" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/e2a896aa-a382-4cd3-9edf-86c03b2bbf4b">
+
+<br>
+
 ## Jmeter Websocket 테스트
 
 <hr style="height: 2px; border: none; background-color: white;" />
@@ -57,15 +67,6 @@ Plugin Manager에서 상단의 Available Plugins 탭을 클릭 하여 WebSocket 
 
 <img width="1012" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/10eeead3-1244-40ee-819c-9a484b8a6d3b">
 
-<br>
-
-## Header에 Authorization Token 추가
-
-<hr style="height: 2px; border: none; background-color: white;" />
-
-Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만들어서 토큰을 넣어줍니다.
-
-<img width="606" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/e2a896aa-a382-4cd3-9edf-86c03b2bbf4b">
 
 <br>
 
@@ -104,7 +105,7 @@ Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만�
 
 <br>
 
-## 그 외 테스트에 도움이 될만한 내용
+## Tip.
 
 <hr style="height: 2px; border: none; background-color: white;" />
 
