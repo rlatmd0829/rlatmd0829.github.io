@@ -29,16 +29,6 @@ open /opt/homebrew/opt/jmeter/bin/jmeter
 
 <br>
 
-## Header에 Authorization Token 추가
-
-<hr style="height: 2px; border: none; background-color: white;" />
-
-Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만들어서 토큰을 넣어줍니다.
-
-<img width="606" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/e2a896aa-a382-4cd3-9edf-86c03b2bbf4b">
-
-<br>
-
 ## Jmeter Websocket 테스트
 
 <hr style="height: 2px; border: none; background-color: white;" />
@@ -55,11 +45,16 @@ Plugin Manager에서 상단의 Available Plugins 탭을 클릭 하여 WebSocket 
 
 1. 먼저 Thread Group을 추가해서 유저를 몇명 테스트 할 건지 정합니다.
 2. Thread Group > Add > Sampler > WebSocket Open Connection 을 만들어서 웹소켓 연동할 서버 주소를 넣습니다.
-3. Thread Group > Add > Sampler > WebSocket Single Write Sampler 에서 연동된 웹소켓으로 Data를 보냅니다.
+3. Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만들어서 토큰을 넣어줍니다.
+4. Thread Group > Add > Sampler > WebSocket Single Write Sampler 에서 연동된 웹소켓으로 Data를 보냅니다.
 
 ### 웹소켓 연결
 
 <img width="1008" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/573a895a-9d46-4d4b-bb3e-635d5e959ff6">
+
+### Header에 Authorization Token 추가
+
+<img width="606" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/e2a896aa-a382-4cd3-9edf-86c03b2bbf4b">
 
 ### 메세지 전송
 
