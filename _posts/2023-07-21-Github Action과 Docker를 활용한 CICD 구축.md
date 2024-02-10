@@ -60,7 +60,7 @@ GitHub에는 데이터베이스 비밀번호와 같은 민감한 정보를 코�
 
 GitHub Actions 워크플로우는 다음과 같습니다.
 
-- pull Request는 테스트 코드만 실행, push는 전체 배포 실행
+- main 브랜치에 push 되었을 경우 실행
 - JDK 설정
 - gradlew 실행권한 부여 및 빌드
 - scp를 이용해 로컬 `build/libs/*.jar` 에 있는 jar파일을 ec2서버 `source` 폴더로 이동
@@ -68,80 +68,8 @@ GitHub Actions 워크플로우는 다음과 같습니다.
   - Dockerfile을 이용하여 docker image 생성
   - 환경변수 넣고 docker run
 
-```yaml
-name: Java CI with Gradle
+![image](https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/afbb85f5-6259-47f4-81b1-ced2eedf8e6e)
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-          cache: gradle
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: Build with Gradle
-        run: ./gradlew build
-      - name: Deliver file
-        uses: appleboy/scp-action@master
-        with:
-          host: 호스팅 서버의 SSH 호스트 주소
-          username: 호스팅 서버의 SSH 이름
-          key: SSH 연결에 사용되는 키
-          port: 호스팅 서버의 포트 번호
-          source: "build/libs/*.jar"
-          target: "source"
-          rm: true
-      - name: Deploy new version of server
-        uses: appleboy/ssh-action@master
-        with:
-          host: 호스팅 서버의 SSH 호스트 주소
-          username: 호스팅 서버의 SSH 이름
-          key: SSH 연결에 사용되는 키
-          port: 호스팅 서버의 포트 번호
-          script: |
-            export DB_HOST= \${{ secrets.DB_HOST }}\
-            export DB_USERNAME= \${{ secret.DB_USERNAME }}
-            export DB_PASSWORD= 호스팅 서버의 SSH 비밀번호
-            export ACTIVE_PROFILE= active 프로필
-            
-            docker stop status-page-api || true
-            docker rm status-page-api || true
-            docker rmi status-page-image || true
-            
-            docker build -t status-page-image .
-
-            docker run -d -p 8080:8080 --name status-page-api -e DB_HOST=$DB_HOST -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD -e SPRING_PROFILES_ACTIVE=$ACTIVE_PROFILE status-page-image:latest
-
-  test:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-          cache: gradle
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: Run tests
-        run: ./gradlew test
-```
-
-> **<font color='dodgerblue'>DB_HOST, DB_USERNAME, DB_PASSWORD 등 직접 값을 넣어주기 보다는 GitHub Secrets에 환경변수를 넣어주고 \${{ secrets.QUACK_RUN_SSH_HOST }} 이런식으로 사용하는게 좋습니다.</font>**
 
 <br>
 
