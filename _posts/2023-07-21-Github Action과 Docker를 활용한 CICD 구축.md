@@ -13,7 +13,7 @@ Github Actions을 이용해 코드가 머지되었을 때 ec2서버로 자동으
 
 먼저 호스팅 서버 ec2에 접속을 해줍니다.
 
-```java
+```shell
 ssh -i ec2-key.pem ec2-user@${EC2_PUBLIC_IP}
 ```
 
@@ -21,7 +21,7 @@ pem 키는 EC2 인스턴스에 접속하기 위한 비밀 키입니다. 이 비�
 
 EC2 인스턴스에는 `.ssh/authorized_keys` 파일에 공개 키가 저장되어 있습니다. 따라서 SSH 연결 시에는 키 쌍을 이용하여 공개 키와 비밀 키를 서로 비교하여 인증을 수행합니다.
 
-> <font color='dodgerblue'>새로운 키 쌍을 생성하려면 ssh-keygen 명령어를 사용하여 공개 키와 비밀 키를 생성합니다. 그 후에 생성된 공개 키를 EC2 인스턴스의 `.ssh/authorized_keys` 파일에 저장하면 해당 비밀 키로도 EC2 인스턴스에 연결할 수 있습니다.</font>
+> <font color='dodgerblue'>새로운 키 쌍을 생성하려면 ssh-keygen 명령어를 사용하여 공개 키와 비밀 키를 생성합니다. 그 후에 생성된 공개 키를 EC2 인스턴스의 .ssh/authorized_keys 파일에 저장하면 해당 비밀 키로도 EC2 인스턴스에 연결할 수 있습니다.</font>
 
 <br>
 
@@ -29,18 +29,18 @@ EC2 인스턴스에는 `.ssh/authorized_keys` 파일에 공개 키가 저장되�
 
 <hr style="height: 2px; border: none; background-color: white;" />
 
-Jar 파일을 사용하여 Docker 이미지를 생성하기 위해서는 Dockerfile이 필요합니다. 따라서 EC2 서버에서 SCP를 통해 전달받은 Jar 파일을 활용하여 Docker 이미지를 생성하기 위해 Dockerfile을 EC2에 생성해야 합니다.
+Jar 파일을 사용하여 Docker 이미지를 생성하기 위해서는 Dockerfile이 필요합니다. 
 
-```java
+따라서 EC2 서버에서 SCP를 통해 전달받은 Jar 파일을 활용하여 Docker 이미지를 생성하기 위해 Dockerfile을 EC2에 생성해야 합니다.
+
+```shell
 FROM amazoncorretto:17-alpine3.16
 ARG JAR_FILE=source/build/libs/status-page-server-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 ```
 
-위 Dockerfile에 내용은 ec2에 JAR_FILE 경로에 존재하는 jar 파일을 app.jar로 변경하여 Docker 이미지의 내부로 복사합니다.
-
-그리고 컨테이너가 시작되면 app.jar 파일이 Java VM에서 실행됩니다.
+이 Dockerfile은 EC2 인스턴스의 JAR_FILE 경로에 있는 jar 파일을 app.jar로 복사하여 Docker 이미지 내부로 가져오고, 컨테이너가 시작되면 Java VM에서 해당 app.jar 파일이 실행됩니다.
 
 <br>
 
@@ -54,7 +54,7 @@ GitHub에는 데이터베이스 비밀번호와 같은 민감한 정보를 코�
 
 <br>
 
-## Github Action CI/CD 
+## Github Actions CI/CD 
 
 <hr style="height: 2px; border: none; background-color: white;" />
 
@@ -63,12 +63,12 @@ GitHub Actions 워크플로우는 다음과 같습니다.
 - pull Request는 테스트 코드만 실행, push는 전체 배포 실행
 - JDK 설정
 - gradlew 실행권한 부여 및 빌드
-- scp를 이용해 `build/libs/*.jar` 에 있는 jar파일을 ec2서버 `source` 폴더로 이동
+- scp를 이용해 로컬 `build/libs/*.jar` 에 있는 jar파일을 ec2서버 `source` 폴더로 이동
 - docker 명령어를 실행
   - Dockerfile을 이용하여 docker image 생성
   - 환경변수 넣고 docker run
 
-```java
+```shell
 name: Java CI with Gradle
 
 on:
