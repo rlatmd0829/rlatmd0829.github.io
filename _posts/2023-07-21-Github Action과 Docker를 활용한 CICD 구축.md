@@ -141,7 +141,7 @@ jobs:
         run: ./gradlew test
 ```
 
-> **<font color='dodgerblue'>DB_HOST, DB_USERNAME, DB_PASSWORD 등 직접 값을 넣어주기 보다는 GitHub Secrets에 환경변수를 넣어주고 `${{ secrets.QUACK_RUN_SSH_HOST }}` 이런식으로 사용하는게 좋습니다.</font>**
+> **<font color='dodgerblue'>DB_HOST, DB_USERNAME, DB_PASSWORD 등 직접 값을 넣어주기 보다는 GitHub Secrets에 환경변수를 넣어주고 \${{ secrets.QUACK_RUN_SSH_HOST }} 이런식으로 사용하는게 좋습니다.</font>**
 
 <br>
 
