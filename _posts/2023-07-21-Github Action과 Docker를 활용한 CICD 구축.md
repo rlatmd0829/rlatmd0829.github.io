@@ -106,8 +106,8 @@ jobs:
       - name: Deploy new version of server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.QUACK_RUN_SSH_HOST }}
-          username: ${{ secrets.QUACK_RUN_SSH_USERNAME }}
+          host: $\{{ secrets.QUACK_RUN_SSH_HOST }}\
+          username: \${{ secrets.QUACK_RUN_SSH_USERNAME }}\
           key: ${{ secrets.QUACK_RUN_SSH_KEY }}
           port: ${{ secrets.QUACK_RUN_SSH_PORT }}
           script: |
