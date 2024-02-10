@@ -68,7 +68,7 @@ GitHub Actions 워크플로우는 다음과 같습니다.
   - Dockerfile을 이용하여 docker image 생성
   - 환경변수 넣고 docker run
 
-```shell
+```yaml
 name: Java CI with Gradle
 
 on:
