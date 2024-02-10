@@ -111,7 +111,7 @@ jobs:
           key: SSH 연결에 사용되는 키
           port: 호스팅 서버의 포트 번호
           script: |
-            export DB_HOST= 호스팅 서버의 SSH 호스트 주소
+            export DB_HOST= ${{ 호스팅 서버의 SSH 호스트 주소 }}
             export DB_USERNAME= 호스팅 서버의 SSH 이름
             export DB_PASSWORD= 호스팅 서버의 SSH 비밀번호
             export ACTIVE_PROFILE= active 프로필
