@@ -57,14 +57,21 @@ Plugin Manager에서 상단의 Available Plugins 탭을 클릭 하여 WebSocket 
 
 <img width="1012" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/10eeead3-1244-40ee-819c-9a484b8a6d3b">
 
+<br>
 
-### Header에 Authorization Token 추가
+## Header에 Authorization Token 추가
+
+<hr style="height: 2px; border: none; background-color: white;" />
 
 Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만들어서 토큰을 넣어줍니다.
 
 <img width="606" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/e2a896aa-a382-4cd3-9edf-86c03b2bbf4b">
 
-### csv를 활용하여 변수에 넣어 사용하는법
+<br>
+
+## csv를 활용하여 변수에 넣어 사용하는법
+
+<hr style="height: 2px; border: none; background-color: white;" />
 
 값을 넣어야할게 많을 경우에는 CSV Data Set Config 를 활용해서 csv를 넣어서 값을 가져올 수 있습니다.
 
@@ -72,7 +79,11 @@ Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만�
 
 열별로 네이밍을 나눌때에는 `,` 를 사용하여 구분하면 됩니다.
 
-### 이전요청 응답값을 변수에 넣어 사용하는법
+<br>
+
+## 이전요청 응답값을 변수에 넣어 사용하는법
+
+<hr style="height: 2px; border: none; background-color: white;" />
 
 응답값이 아래와 같이 들어올 때 JSON Extractor를 사용하여 `data.token` 을 가져와 변수에 넣을 수 있습니다.
 
@@ -91,8 +102,11 @@ Websocket Open Connection > Add > Config Element > HTTP Header Manager 을 만�
 
 <img width="1009" alt="image" src="https://github.com/rlatmd0829/rlatmd0829.github.io/assets/70622731/bb8fd631-e71d-4031-965a-998c60d5803e">
 
+<br>
 
-### 그 외 테스트에 도움이 될만한 내용
+## 그 외 테스트에 도움이 될만한 내용
+
+<hr style="height: 2px; border: none; background-color: white;" />
 
 - Loop Controller를 사용하면 특정 구간만 반복 호출할 수 있습니다.
 - Constant Timer를 사용하면 요청할 때 딜레이를 줄 수 있습니다.
