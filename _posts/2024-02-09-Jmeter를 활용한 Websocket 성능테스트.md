@@ -1,6 +1,6 @@
 ---
 title: Jmeter를 활용한 Websocket 성능테스트
-date: 2023-07-21 12:00:00 +09:00
+date: 2024-02-09 12:00:00 +09:00
 categories: [성능테스트, Jmeter]
 tags: [Jmeter, 성능테스트, http, websocket, JSON-RPC]
 ---

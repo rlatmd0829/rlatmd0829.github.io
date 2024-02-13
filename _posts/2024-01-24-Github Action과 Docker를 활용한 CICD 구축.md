@@ -1,6 +1,6 @@
 ---
 title: Github Action과 Docker를 활용한 CI/CD 구축
-date: 2023-07-21 12:00:00 +09:00
+date: 2024-01-24 12:00:00 +09:00
 categories: [SpringBoot, CI/CD]
 tags: [Java, SpringBoot, Github Actions, JPA]     
 ---
