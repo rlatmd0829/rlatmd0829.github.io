@@ -53,7 +53,11 @@ public long updateStatusByIdIn(List<Long> userIds, String status) {
 
 > **<font color='dodgerblue'>bulk delete는 update를 delete로 바꿔주면 됩니다.</font>**
 
+<br>
+
 ## Bulk update, delete 주의사항
+
+<hr style="height: 2px; border: none; background-color: white;" />
 
 벌크 연산은 영속성 컨텍스트를 무시하고 직접 데이터베이스에 쿼리를 실행합니다. 이는 영속성 컨텍스트가 현재 관리하고 있는 엔티티의 상태와 실제 데이터베이스의 상태 사이에 불일치를 초래할 수 있습니다.
 
