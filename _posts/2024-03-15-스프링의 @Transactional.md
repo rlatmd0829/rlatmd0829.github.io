@@ -141,9 +141,7 @@ InnoDB 스토리지 엔진은 이를 구현하기 위해 언두 로그(Undo log)
 
 Mysql innoDB, PostgreSQL에서 사용하고 있다.
 
-### Db lock
-
-<hr style="height: 2px; border: none; background-color: white;" />
+### Db Lock
 
 보통 mysql에 기본 격리레벨은 Repeatable read이다 그러나 해당 격리레벨로도 동시성을 해결할 수 없는경우에 jpa 비관적락을 사용해 동시성을 제어한다
 이때 사용되는 락이 베타락, 공유락 이다
